@@ -15,7 +15,7 @@ export const dbConnection = async () => {
             console.log('MongoDB | Connected to mongoDB');
         })
         mongoose.connection.on('open', () => {
-            console.log('MongoDB | Cnnected to database')
+            console.log('MongoDB | Connected to database')
         })
         mongoose.connection.on('reconnected', () => {
             console.log('MongoDB | Reconnected to MongoDB')
