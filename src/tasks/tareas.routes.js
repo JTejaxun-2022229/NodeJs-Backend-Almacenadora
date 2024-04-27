@@ -19,3 +19,13 @@ router.put(
     ],
     tareasPut
   );
+
+  router.delete(
+    "/:id",
+    [
+      check("id", "No es un ID válido").isMongoId(),
+      check("id").custom(existeTareaById),
+      validarCampos,
+    ],
+    tareaDelete
+  );
