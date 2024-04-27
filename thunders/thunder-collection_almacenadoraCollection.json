@@ -1,0 +1,35 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "almacenadoraCollection",
+    "collectionId": "2a0cbcee-1204-4b00-822b-20ece7a25059",
+    "dateExported": "2024-04-27T23:43:57.982Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "55ccfa28-7efb-4640-b066-b833a14c1032",
+            "colId": "2a0cbcee-1204-4b00-822b-20ece7a25059",
+            "containerId": "",
+            "name": "tareaPut",
+            "url": "http://localhost:8080//tareas/v1/id",
+            "method": "DELETE",
+            "sortNum": 10000,
+            "created": "2024-04-27T23:42:46.474Z",
+            "modified": "2024-04-27T23:43:51.074Z",
+            "headers": []
+        },
+        {
+            "_id": "ef2c7fa8-fc1e-4f8d-9cb2-d8f5d157b04c",
+            "colId": "2a0cbcee-1204-4b00-822b-20ece7a25059",
+            "containerId": "",
+            "name": "tareaDelete",
+            "url": "http://localhost:8080//tareas/v1/id",
+            "method": "PUT",
+            "sortNum": 20000,
+            "created": "2024-04-27T23:43:39.183Z",
+            "modified": "2024-04-27T23:43:39.183Z",
+            "headers": []
+        }
+    ],
+    "ref": "TbEfDIBnSuhnEppJ0gv-lj339LRd5CDkwKL_ZY287BZWRgqfrokJ9odiuB8J10Gmpc_WVek8DNiFPLcpaQSvcQ"
+}
