@@ -24,3 +24,4 @@ export const  tareaDelete = async (req, res = response) => {
         msg: "Tarea eliminada"
     });
 }
+
