@@ -6,10 +6,4 @@ export const existeTareaById = async (id = '') => {
         throw new Error(`El ID: ${id} no existe`);
     }
     
-<<<<<<< HEAD
 }
-=======
-}
-
-
->>>>>>> feature/tareas/oflores-2022234
