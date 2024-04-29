@@ -5,13 +5,13 @@ import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import { dbConnection } from './mongo.js';
-import taksRoutes from '../src/tasks/tareas.routes.js';
+import tasksRoutes from '../src/tasks/tareas.routes.js';
 
 class Server {
     constructor(){
         this.app = express();
         this.port = process.env.PORT;
-        this.taksPath = '/storage/v1/taks';
+        this.tasksPath = '/storage/v1/tasks';
 
         this.middlewares();
         this.connectioDB();
@@ -30,7 +30,7 @@ class Server {
     }
 
     routes() {
-        this.app.use(this.taksPath, taksRoutes)
+        this.app.use(this.tasksPath, tasksRoutes)
 
     }
 
