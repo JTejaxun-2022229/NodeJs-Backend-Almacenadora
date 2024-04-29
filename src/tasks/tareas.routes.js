@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { check } from 'express-validator';
+<<<<<<< HEAD
 import { validarCampos } from '../middlewares/validar-campos.js';
 import { tareasPost, 
          tareasGet, 
@@ -27,6 +28,17 @@ router.get(
     '/',
     tareasGet
 );
+=======
+import {
+    tareasPut,
+    tareaDelete
+} from "./tareas.controller.js"
+
+import { existeTareaById } from '../helpers/db-validator.js';
+
+const router = Router();    
+
+>>>>>>> feature/tareas/oflores-2022234
 
 router.put(
     "/:id",
@@ -46,6 +58,10 @@ router.put(
       validarCampos,
     ],
     tareaDelete
+<<<<<<< HEAD
   );
 
 export default router;
+=======
+  );
+>>>>>>> feature/tareas/oflores-2022234

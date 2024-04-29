@@ -7,4 +7,9 @@ export const validarCampos = (req, res, next) => {
     }
 
     next();
+<<<<<<< HEAD
 }
+=======
+}
+
+>>>>>>> feature/tareas/oflores-2022234
