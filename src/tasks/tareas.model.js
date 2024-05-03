@@ -9,7 +9,7 @@ const TareaSchema = mongoose.Schema({
         type: String,
         required: [true, "Description is required"],
     },
-    feachaInicio: {
+    fechaInicio: {
         type: Date,
         required: [true, "Start date is required"],
     },
