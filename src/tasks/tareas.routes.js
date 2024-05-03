@@ -22,7 +22,7 @@ router.put(
   );
 
   router.delete(
-    "/:id",
+    "cancelada/:id",
     [
       check("id", "No es un ID válido").isMongoId(),
       check("id").custom(existeTareaById),
@@ -32,7 +32,7 @@ router.put(
   );
 
   router.delete(
-    "/:id",
+    "terminada/:id",
     [
       check("id", "No es un ID válido").isMongoId(),
       check("id").custom(existeTareaById),

@@ -1,35 +1,47 @@
 {
     "clientName": "Thunder Client",
     "collectionName": "almacenadoraCollection",
-    "collectionId": "2a0cbcee-1204-4b00-822b-20ece7a25059",
-    "dateExported": "2024-04-27T23:43:57.982Z",
+    "collectionId": "a59517c3-24c7-4a77-880b-93e1a6f5b43e",
+    "dateExported": "2024-05-03T04:31:04.754Z",
     "version": "1.2",
     "folders": [],
     "requests": [
         {
-            "_id": "55ccfa28-7efb-4640-b066-b833a14c1032",
-            "colId": "2a0cbcee-1204-4b00-822b-20ece7a25059",
+            "_id": "156839d2-9a39-4e07-b56b-f659b6f24eaf",
+            "colId": "a59517c3-24c7-4a77-880b-93e1a6f5b43e",
             "containerId": "",
             "name": "tareaPut",
-            "url": "http://localhost:8080//tareas/v1/id",
+            "url": "http://localhost:8080/tareas/v1/id",
             "method": "DELETE",
             "sortNum": 10000,
-            "created": "2024-04-27T23:42:46.474Z",
-            "modified": "2024-04-27T23:43:51.074Z",
+            "created": "2024-04-27T23:45:16.535Z",
+            "modified": "2024-05-03T04:30:05.149Z",
             "headers": []
         },
         {
-            "_id": "ef2c7fa8-fc1e-4f8d-9cb2-d8f5d157b04c",
-            "colId": "2a0cbcee-1204-4b00-822b-20ece7a25059",
+            "_id": "5919be12-c3cf-4ef2-9383-61ed446089d4",
+            "colId": "a59517c3-24c7-4a77-880b-93e1a6f5b43e",
             "containerId": "",
-            "name": "tareaDelete",
-            "url": "http://localhost:8080//tareas/v1/id",
+            "name": "tareaCancelada",
+            "url": "http://localhost:8080//tareas/v1/cancelada/id",
             "method": "PUT",
             "sortNum": 20000,
-            "created": "2024-04-27T23:43:39.183Z",
-            "modified": "2024-04-27T23:43:39.183Z",
+            "created": "2024-04-27T23:45:16.536Z",
+            "modified": "2024-05-03T04:30:23.141Z",
+            "headers": []
+        },
+        {
+            "_id": "ead48059-9ac6-4920-8041-37200c27dbc6",
+            "colId": "a59517c3-24c7-4a77-880b-93e1a6f5b43e",
+            "containerId": "",
+            "name": "tareaFinalizada",
+            "url": "http://localhost:8080/tareas/v1/terminada/id",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-05-03T04:27:42.380Z",
+            "modified": "2024-05-03T04:30:41.944Z",
             "headers": []
         }
     ],
-    "ref": "TbEfDIBnSuhnEppJ0gv-lj339LRd5CDkwKL_ZY287BZWRgqfrokJ9odiuB8J10Gmpc_WVek8DNiFPLcpaQSvcQ"
+    "ref": "Ha_6ijm-ApPzWUyhFPlHfUFXphnvRmJZ2EZCyWSuXt10QQSQ7QwXmxll9k8SsonWTrCWnI9F_z3PvfS13Rd50Q"
 }
