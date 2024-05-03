@@ -15,13 +15,25 @@ export const tareasPut = async (req, res = response) => {
     });
 }
 
-export const  tareaDelete = async (req, res = response) => {
+export const  tareaCancelada = async (req, res = response) => {
     const { id } = req.params;
 
-    await Tarea.findByIdAndDelete(id, { estado: false});
+    await Tarea.findByIdAndUpdate(id, { estado: 'cancelada'});
 
     res.status(200).json({
-        msg: "Tarea eliminada"
+        msg: "Tarea cancelada"
     });
 }
+
+export const  tareaTerminada = async (req, res = response) => {
+    const { id } = req.params;
+
+    await Tarea.findByIdAndUpdate(id, { estado: 'terminada'});
+
+    res.status(200).json({
+        msg: "Tarea Terminada"
+    });
+}
+
+
 

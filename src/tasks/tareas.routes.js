@@ -2,7 +2,8 @@ import { Router } from 'express';
 import { check } from 'express-validator';
 import {
     tareasPut,
-    tareaDelete
+    tareaCancelada,
+    tareaTerminada
 } from "./tareas.controller.js"
 
 import { existeTareaById } from '../helpers/db-validator.js';
@@ -27,5 +28,15 @@ router.put(
       check("id").custom(existeTareaById),
       validarCampos,
     ],
-    tareaDelete
+    tareaCancelada
+  );
+
+  router.delete(
+    "/:id",
+    [
+      check("id", "No es un ID válido").isMongoId(),
+      check("id").custom(existeTareaById),
+      validarCampos,
+    ],
+    tareaTerminada
   );
