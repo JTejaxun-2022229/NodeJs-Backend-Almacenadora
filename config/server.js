@@ -11,7 +11,7 @@ class Server {
     constructor(){
         this.app = express();
         this.port = process.env.PORT;
-        this.tareaPath = '/tasks/v1/task'
+        this.tareaPath = '/storage/v1/task'
 
         this.middlewares();
         this.connectioDB();
@@ -26,6 +26,7 @@ class Server {
         this.app.use(express.urlencoded({ extended: true }))
         this.app.use(cors())
         this.app.use(helmet())
+        this.app.use(express.json())
         this.app.use(morgan('dev')) 
     }
 

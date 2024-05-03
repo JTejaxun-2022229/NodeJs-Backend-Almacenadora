@@ -3,15 +3,14 @@ import Tarea from "./tareas.model.js";
 
 export const tareasPost = async (req, res = response) => {
     try {
-        const { nombre, descripcion, fechaInicio, fechaCierre, nombreResponsable, estado } = req.body;
+        const { nombre, descripcion, fechaInicio, fechaCierre, nombreResponsable } = req.body;
 
         const nuevaTarea = new Tarea({
             nombre,
             descripcion,
             fechaInicio,
             fechaCierre,
-            nombreResponsable,
-            estado
+            nombreResponsable
         });
 
         await nuevaTarea.save();
@@ -21,31 +20,32 @@ export const tareasPost = async (req, res = response) => {
             msg: "Tarea creada exitosamente"
         });
     } catch (error) {
-        console.error("Error al crear la tarea:", error);
+        
         res.status(500).json({ error: "Error interno del servidor" });
     }
 };
 
-export const tareasGet = async (req, res = response) => {
+export const tareasGet = async (req, res) => {
+
     try {
-        const { nombre, fechaCierre, estado } = req.query;
-        let filtros = {};
 
-        if (nombre) {
-            filtros.nombre = { $regex: new RegExp(nombre, "i") };
-        }
-        if (fechaCierre) {
-            filtros.fechaCierre = { $eq: new Date(fechaCierre) };
-        }
-        if (estado) {
-            filtros.estado = estado;
-        }
+        const { nombre, descripcion, fechaInicio, fechaCierre, nombreResponsable, estado } = req.query;
 
-        const tareas = await Tarea.find(filtros);
+        const filter = {};
+        if (nombre) filter.nombre = { $regex: nombre, $options: 'i' };
+        if (descripcion) filter.descripcion = { $regex: descripcion, $options: 'i' };
+        if (fechaInicio) filter.fechaInicio = { $regex: fechaInicio, $options: 'i' };
+        if (fechaCierre) filter.fechaCierre = { $regex: fechaCierre, $options: 'i' };
+        if (nombreResponsable) filter.nombreResponsable = { $regex: nombreResponsable, $options: 'i' };
+        if (estado) filter.estado = { $regex: estado, $options: 'i' };
 
-        res.json({ tareas });
+        const tareas = await Tarea.find(filter);
+
+        const total = tareas.length;
+
+        res.status(200).json({ total, tareas });
     } catch (error) {
-        console.error("Error al obtener las tareas:", error);
+
         res.status(500).json({ error: "Error interno del servidor" });
     }
 };
@@ -56,7 +56,7 @@ export const tareasPut = async (req, res = response) => {
 
     await Tarea.findByIdAndUpdate(id, resto);
 
-    const tarea = await Tarea.findOne({_id: id});
+    const tarea = await Tarea.findOne({ _id: id });
 
     res.status(200).json({
         msg: "Tarea actualizada",
@@ -64,12 +64,22 @@ export const tareasPut = async (req, res = response) => {
     });
 }
 
-export const  tareaDelete = async (req, res = response) => {
+export const tareaCancelada = async (req, res = response) => {
     const { id } = req.params;
 
-    await Tarea.findByIdAndDelete(id, { estado: false});
+    await Tarea.findByIdAndUpdate(id, { estado: 'cancelada' });
 
     res.status(200).json({
-        msg: "Tarea eliminada"
+        msg: "Tarea cancelada"
+    });
+}
+
+export const tareaTerminada = async (req, res = response) => {
+    const { id } = req.params;
+
+    await Tarea.findByIdAndUpdate(id, { estado: 'terminada' });
+
+    res.status(200).json({
+        msg: "Tarea Terminada"
     });
 }
